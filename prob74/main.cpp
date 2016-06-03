@@ -50,6 +50,13 @@ vector <long long> digitFactorialSumChain(long long a){
 	}
 }
 
+//Alternative of below
+long long countFactorialChains(long long l, long long a, long long b){
+	for(long long i = a; i < b; i++){
+		vector<long long> tmp = digitFactorialSumChain(i);
+	}
+}
+
 //Count non-repeating chains of exactly length l, within an interval [a:b]
 long long countFactorialChains(long long l, long long a, long long b){
 	long long count = 0;
@@ -64,11 +71,12 @@ long long countFactorialChains(long long l, long long a, long long b){
 }
 
 int main(){
+	vector<vector<long long>> lengths;
 	long long length = 60;
 	long long a = 1;
 	long long b = 999999;
 
-	cout << "Result for length " << length << " is: " <<countFactorialChains(length, a, b) << endl;
+	cout << "Result for length " << length << " is: " << countFactorialChains(length, a, b) << endl;
 
 	return 0;
 }
