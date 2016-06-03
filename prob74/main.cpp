@@ -36,13 +36,21 @@ void digitFactorialSumChainCount(long long a, vector<vector<long long>> &l, long
 			}
 		}else{
 			//get position index p of a in chainArray
-			long long p = 0;
-			for (long long i = p ; i < chainArray.size(); i++){
-				l[(chainArray.size() - p)].push_back(chainArray[i]);
-			}
-			for (long long i = 0; i < p; i++){
-				l[(chainArray.size() - i)].push_back(chainArray[i]);
-			}	
+			for (int i = 0; i < l.size(); i++){
+				auto it = find(l[i].begin(), l[i].end(), a);
+				if (it != l[i].end()){
+					long long p = i;
+					
+					for (long long j = p ; j < chainArray.size(); j++){
+					l[(chainArray.size() - p)].push_back(chainArray[j]);
+					}
+					
+					for (long long j = 0; j < p; j++){
+						l[(chainArray.size() - j)].push_back(chainArray[j]);
+					}
+					
+				}
+			
 		}
 	}else{
 		//if a in l
