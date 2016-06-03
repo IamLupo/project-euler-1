@@ -30,15 +30,15 @@ void digits(long long a, &vector<long long> digitsArray){
 }
 
 //for starting number a in argument, return the array of numbers of a non-repeating chain of digit factorial sums with 
-vector <long long> digitFactorialSumChainCount(long long a, vector<vector<long long>> &l, long long limit){
+void digitFactorialSumChainCount(long long a, vector<vector<long long>> &l, long long limit){
 	//digits in a
-	vector<long long> digitsArray = [];
+	vector<long long> digitsArray;
 	
 	//factorial of each digit in a
-	vector<long long> factorialArray = [];
+	vector<long long> factorialArray;
 	
 	//array of summed factorials to be returned
-	vector<long long> chainArray = [];
+	vector<long long> chainArray;
 	
 	//if a in chainArray
 	if (find(chainArray.begin(), chainArray.end(), a) != chainArray.end()){
@@ -47,12 +47,13 @@ vector <long long> digitFactorialSumChainCount(long long a, vector<vector<long l
 				l[chainArray.size()].push_back(chainArray[i]);
 			}
 		}else{
-			get position index p of a in chainArray
+			//get position index p of a in chainArray
+			long long p = 0;
 			for (long long i = p ; i < chainArray.size(); i++){
-				push_back chainArray[i] to l at index j == chainArray.size() - p
+				l[(chainArray.size() - p)].push_back(chainArray[i]);
 			}
 			for (long long i = 0; i < p; i++){
-				push_back chainArray[i] to l at index j == chainArray.size() - i
+				l[(chainArray.size() - i)].push_back(chainArray[i]);
 			}	
 		}
 	}else{
@@ -64,8 +65,17 @@ vector <long long> digitFactorialSumChainCount(long long a, vector<vector<long l
 				//all the numbers that do not yet exist in l can be added to l at the same index as value a in l
 				//cout << "Number " << a << " found at l[" << i << "][" << distance(l[i].begin(), it) << "].";
 				for(long long j = 0; j < chainArray.size(); j++){
-					if(chainArray[j] not in l){
-						l[i].push_back(chainArray[j]);
+					
+					for (int j = 0; j < l.size(); j++){
+						auto it = find(l[j].begin(), l[j].end(), i);
+						if (it != l[j].end()){
+							
+						}else{
+							//if(chainArray[j] not in l){
+							l[i].push_back(chainArray[j]);
+						}
+					}
+					
 					}
 				}
 				
@@ -94,8 +104,15 @@ int main(){
 	vector<vector<long long>> l;
 	
 	for(long long i = 1; i < max; i++){
-		if(i not in l){
-			digitFactorialSumChainCount(i, l, limit);
+		
+		for (int j = 0; j < l.size(); j++){
+			auto it = find(l[j].begin(), l[j].end(), i);
+			if (it != l[j].end()){
+				
+			}else{
+				//if i not in l
+				digitFactorialSumChainCount(i, l, limit);
+			}
 		}
 	}
 	
