@@ -1,26 +1,14 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
-//Factorial function
-long long factorial(long long a){
-	long long b = 1;
-	for(long long i = 1; i < a; i++){
-		b *= i+1;
-	}
-}
-
 //Factorials for digits 0-9
-vector<long long> digitFactorials;
-
-for(long long i = 0; i < 10; i++){
-	digitFactorials.push_back(factorial(i));
-}
+static vector<long long> digitFactorials = {1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880};
 
 //return the array of digits that a is made of
-void digits(long long a, &vector<long long> digitsArray){
+void digits(long long a, vector<long long> &digitsArray){
 	if(a >= 10){
 		digits(a / 10, digitsArray);
 	}
@@ -74,8 +62,6 @@ void digitFactorialSumChainCount(long long a, vector<vector<long long>> &l, long
 							//if(chainArray[j] not in l){
 							l[i].push_back(chainArray[j]);
 						}
-					}
-					
 					}
 				}
 				
