@@ -1,18 +1,17 @@
-#include<stdio.h>
+#include<cstdio>
 
-void main(){
+int main(){
+  int limit=1000;
+  int sum = 0;
 
-int limit=1000;
-int sum = 0;
+  for(int i = 0; i < limit; i++){
+    if((i % 3 == 0) || (i % 5 == 0)){
+      sum += i;
+    }
+  }
 
-for(int i=0;i<limit;i++){
+printf("The sum of all multiples of 3 and 5 below %d is %d", limit, sum);
 
-if((i%3==0)||(i%5==0)){
-sum += i;
-}
-
-}
-
-printf("The sum of all multiples of 3 and 5 below %d is %d",limit,sum);
+return 0;
 
 }
