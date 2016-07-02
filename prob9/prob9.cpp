@@ -19,12 +19,10 @@ return false;
 int main(){
 
 		int n = 1000;
-		int limit = n;
 
-		for(int a = 1; a <= limit; a++){
-				for(int b = a + 1; b <= limit - a; b++){
-						for(int c = b + 1; c <= limit -b -a; c++){
-								//cout << a + b + c << endl;
+		for(int a = 1; a <= n; a++){
+				for(int b = a + 1; b <= n - a; b++){
+						for(int c = b + 1; c <= n -b -a; c++){
 								if((a + b + c == n) && isPythagoreanTriplet(a, b, c)){
 										cout << a << ": " <<  b << ": " << c << endl;
 										cout << a * b * c << endl;
