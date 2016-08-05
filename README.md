@@ -20,24 +20,22 @@ https://projecteuler.net/problem=problem_number_here
 - Admitting you're pushing your work to github:
 A machine that can both compile/execute your program and push your work directly to github from the command-line rather than via github.com
 
+```
 git clone https://github.com/username/reponame.git
-
 cd reponame
-
 git add -A
-
 git commit -m "your comment on this commit here"
-
 git push
+```
 
 ####A start template file for a quick start
 In my case, I do the following to get started:
 
+```
 mkdir probN
-
 cp template.cpp probN/probN.cpp
-
 vim probN/probN.cpp
+```
 
 ####A text editor
 - Beyond vim, your favorite text/code editor for quick text processing (notepad++ for me)
@@ -62,9 +60,10 @@ Compiling/executing often allows to identify errors as you go as opposed to look
 Keep your code clean as you go: increment and space your code as you go so that it doesn't become a mess that you will struggle to read over once more. Consider that your code will always have a readership. Comment your code.
 
 ####Know your programming language
-Know the specifics of your language without having to search for it on the internet. This willl save you lots of precious time. This is where a cheat sheet can come in handy.
+Know the specifics of your language without having to search for it on the internet. This will save you lots and lots of precious time. This is where a cheat sheet can come in handy.
 
 ####Use a programming language standard
 In the case of C++ you can use a standard such as C++11 to help you compile and debug your program.
 
-
+####Know some programming basics
+Know how to write simpler more abstract functions that will take less time to execute and that will be easier to reuse in the future.
