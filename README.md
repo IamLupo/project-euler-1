@@ -30,7 +30,7 @@ git commit -m "your comment on this commit here"
 
 git push
 
-- A start template for your file
+####A start template file for a quick start
 In my case, I do the following to get started:
 
 mkdir probN
