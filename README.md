@@ -37,7 +37,7 @@ mkdir probN
 
 cp template.cpp probN/probN.cpp
 
-vim probN.cpp
+vim probN/probN.cpp
 
 ####A text editor
 - Beyond vim, your favorite text/code editor for quick text processing (notepad++ for me)
@@ -63,5 +63,8 @@ Keep your code clean as you go: increment and space your code as you go so that 
 
 ####Know your programming language
 Know the specifics of your language without having to search for it on the internet. This willl save you lots of precious time. This is where a cheat sheet can come in handy.
+
+####Use a programming language standard
+In the case of C++ you can use a standard such as C++11 to help you compile and debug your program.
 
 
